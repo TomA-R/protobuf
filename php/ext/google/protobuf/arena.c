@@ -36,6 +36,7 @@ static void Arena_Free(zend_object* obj) {
   Arena* intern = (Arena*)obj;
   upb_Arena_Free(intern->arena);
   zend_object_std_dtor(&intern->std);
+  efree(intern);
 }
 
 // C Functions from arena.h ////////////////////////////////////////////////////
